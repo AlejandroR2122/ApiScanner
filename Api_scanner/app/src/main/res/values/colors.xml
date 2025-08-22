@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#070606</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#818080</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="red">#EB0606</color>
+    <color name="colorAccent">#79E77D</color>
+    <color name="colorTextNav">#FFFFFF</color>
+    <color name="colorPrimary">#649ab9</color>
+    <color name="inputEnable">#A8A8A8</color>
+    <color name="colorAccept">#049B0A</color>
+    <color name="colorCancel">#CA1919</color>
+    <color name="colorReparacion">#FF9800</color>
+    <color name="colorAlmacen">#03A9F4</color>
+    <color name="colorRetirada">#8A8888</color>
+    <color name="colorError">#CE0000</color>
+    <color name="colorAccordion">#BFB9B9</color>
+
+    <color name="colorPrimaryModal">#6200EE</color>
+    <color name="colorAccentModal">#03DAC5</color>
+    <color name="colorCancelModal">#B00020</color>
+    <color name="background_light">#F5F5F5</color>
+</resources>

@@ -1,0 +1,45 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título (por ejemplo, Número de Serie) -->
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de Serie: 45146PHH31WFC"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Línea divisoria -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+
+        <!-- Detalles -->
+        <TextView
+            android:id="@+id/tvDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detalles de la avería"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:paddingTop="8dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

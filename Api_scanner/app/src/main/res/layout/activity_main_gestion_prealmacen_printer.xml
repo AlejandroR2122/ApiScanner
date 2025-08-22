@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="18dp"
+    android:paddingTop="25dp"
+    android:paddingRight="18dp"
+    tools:context=".printer.MainUbicationPrinter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="14dp"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Paginación lateral (Toolbar) dentro del ScrollView -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
+                android:elevation="4dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <!-- Contenedor para los fragmentos (logo) -->
+                <ImageView
+                    android:id="@+id/toolbar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo_blanco" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- TextView agregado arriba -->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Gestion Almacen"
+                android:textColor="@color/black"
+                android:textSize="24sp" />  <!-- TextView agregado arriba -->
+            <!-- LinearLayout horizontal para los dos TextViews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.25"
+                    android:text="Gestion Almacen"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />  <!-- Ocupa más espacio -->
+
+                <TextView
+                    android:id="@+id/textViewEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0.75"
+                    android:text="ESTADO"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    />
+            </LinearLayout>
+
+            <!-- ImageView agregado -->
+            <ImageView
+                android:id="@+id/imagePrinter"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/image_desc" />
+
+
+            <!-- LinearLayout horizontal para los dos TextViews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Numero de serie: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewNumSerie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />  <!-- Ocupa más espacio -->
+
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Almacen: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TextIdAlmacen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />  <!-- Ocupa más espacio -->
+
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modelo: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TextIdModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />  <!-- Ocupa más espacio -->
+
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+            </LinearLayout>
+
+            </LinearLayout>
+    </ScrollView>
+
+    <!-- Layout para los botones, anclado a la parte inferior -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Crear Incidencia"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorCancel"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/SendModificated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Enviar Almacen"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

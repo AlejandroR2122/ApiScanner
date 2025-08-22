@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/btnHome"
+        android:icon="@drawable/icon_home_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/btnImpresora"
+        android:icon="@drawable/icon_printer_24"
+        android:title="Impresora" />
+
+    <item
+        android:id="@+id/btnDarAlta"
+        android:icon="@drawable/icon_printer_check"
+        android:title="Prealmacén" />
+
+    <item
+        android:id="@+id/btnSettings"
+        android:icon="@drawable/icon_settings_24"
+        android:title="Settings" />
+
+</menu>

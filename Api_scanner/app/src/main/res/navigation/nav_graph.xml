@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.example.api_scanner.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_details"
+            app:destination="@id/fragment_details" />
+        <action
+            android:id="@+id/action_fragment_home_to_fragmentAltaPrinter"
+            app:destination="@id/fragmentAltaPrinter" />
+        <action
+            android:id="@+id/action_fragment_home_to_settings"
+            app:destination="@id/fragmentSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_details"
+        android:name="com.example.api_scanner.fragments.FragmentDetailsPrinter"
+        android:label="Details"
+        tools:layout="@layout/fragment_details_layout" >
+        <action
+            android:id="@+id/action_fragment_details_to_fragmentAltaPrinter2"
+            app:destination="@id/fragmentAltaPrinter" />
+        <action
+            android:id="@+id/action_fragment_details_to_fragment_home"
+            app:destination="@id/fragment_home" />
+        <action
+            android:id="@+id/action_fragment_details_to_settings"
+            app:destination="@id/fragmentSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAltaPrinter"
+        android:name="com.example.api_scanner.fragments.FragmentGestionAlmacen"
+        android:label="fragment_alta_printer"
+        tools:layout="@layout/fragment_gestion_almacen" >
+        <action
+            android:id="@+id/action_fragmentAltaPrinter_to_fragment_details2"
+            app:destination="@id/fragment_details" />
+        <action
+            android:id="@+id/action_fragmentAltaPrinter_to_fragment_home"
+            app:destination="@id/fragment_home" />
+        <action
+            android:id="@+id/action_fragmentAltaPrinter_to_settings"
+            app:destination="@id/fragmentSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.example.api_scanner.fragments.FragmentSettings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_fragment_home"
+            app:destination="@id/fragment_home" />
+        <action
+            android:id="@+id/action_settings_to_fragmentAltaPrinter"
+            app:destination="@id/fragmentAltaPrinter" />
+        <action
+            android:id="@+id/action_fragmentSettings_to_fragment_details"
+            app:destination="@id/fragment_details" />
+    </fragment>
+
+
+</navigation>
+

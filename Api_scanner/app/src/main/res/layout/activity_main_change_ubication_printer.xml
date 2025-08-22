@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="18dp"
+    android:paddingTop="25dp"
+    android:paddingRight="18dp"
+    tools:context=".printer.MainUbicationPrinter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="120dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+
+            >
+            <!-- Paginación lateral (Toolbar) dentro del ScrollView -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="343dp"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
+                android:elevation="4dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <!-- Contenedor para los fragmentos (logo) -->
+                <ImageView
+                    android:id="@+id/toolbar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo_blanco" />
+            </androidx.appcompat.widget.Toolbar>
+            <!-- TextView agregado arriba -->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Gestion Almacen"
+                android:textColor="@color/black"
+                android:textSize="24sp" />  <!-- TextView agregado arriba -->
+            <!-- LinearLayout horizontal para los dos TextViews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.25"
+                    android:text="Nombre"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />  <!-- Ocupa más espacio -->
+
+                <TextView
+                    android:id="@+id/textViewEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0.75"
+                    android:text="ESTADO"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+
+                    />  <!-- Ocupa menos espacio -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearFechaBaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha Baja: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewFechaBaja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:text="Fecha Baja"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <!-- ImageView agregado -->
+            <ImageView
+                android:id="@+id/imagePrinter"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/image_desc" />
+            <!-- LinearLayout horizontal para los dos TextViews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Numero de serie: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewNumSerie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1.5"
+                    android:text="Gestion Almacen"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="F.Alta: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewFechaAlta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Fecha Alta"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />   <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18sp"
+                    android:text="C.SAS: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewCodigoSAS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Fecha Alta"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <!-- Campo Matricula -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/border_background"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textViewMatricula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Matricula"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/editTextMatricula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Matricula"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayoutIP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/border_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">  <!-- Centrar verticalmente los elementos -->
+
+                <!-- SwitchMaterial en la misma línea -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchExample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="USB"
+                    android:textSize="18sp" /> <!-- Espacio entre el Switch y los TextViews -->
+
+                <!-- Primer TextView en la misma línea -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="IP: "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" /> <!-- Margen para separar los elementos -->
+                    <EditText
+                        android:id="@+id/editTextIp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Ip                             "
+                        android:inputType="numberDecimal|numberSigned"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Columna para MAC -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MAC : "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewMac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mac"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Columna para Firmware -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Firmware : "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewFirmware"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Firmware"
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Campo Val Iniciales -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Val Iniciales: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewValIniciales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />   <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18sp"
+                    android:text="Val Actuales: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewValActuales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Val Iniciales: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />   <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18sp"
+                    android:text="Modelo: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewIdModelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+
+            <!-- TONEL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel Toner: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textViewNivelToner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="17sp" />   <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16sp"
+                    android:text="Instalacion: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/textViewFechaInstalacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/grey"
+                    android:textSize="16sp" />
+            </LinearLayout>
+           <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="F.Mod : "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/textViewFechaMod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Fecha Mod"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />   <!-- TextView Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18sp"
+                    android:text="VLAN: "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/textViewVlan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Vlan"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp" />
+                <!-- Ocupa menos espacio -->
+            </LinearLayout>
+            <!-- Campo Almacen Y Planta-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <!-- Columna para MAC -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Almacen : "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/textViewAlmacen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/grey"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <!-- Encabezado -->
+                <LinearLayout
+                    android:id="@+id/layoutAccordionUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/border_background"
+                    android:backgroundTint="@color/grey"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="1dp">
+                    <TextView
+                        android:id="@+id/HeaderAccordionUbicacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawableEnd="@drawable/ic_arrow_down"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:text="Detalles Ubicación"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+                <!-- Contenido Expandible -->
+                <LinearLayout
+                    android:id="@+id/contenidoAccordionUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+                    <!-- Planta -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Planta: "
+                            android:textColor="@color/black" />
+                        <Spinner
+                            android:id="@+id/SpinnerPlanta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <!-- Campo Persona -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewPersona"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Persona recepción: "
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/editTextPersona"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Persona"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Campo Telefono -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telefono"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/editTextTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Telefono"
+                            android:inputType="number"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                    <!-- Campo Usuario Recepcion -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewUsuarioRecepcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Usuario Encargado"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/editTextUsuarioRecepcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Usuario Recepcion"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <!-- Campo Ubicacion -->
+                        <TextView
+                            android:id="@+id/textViewUbicacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ubicacion"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/editTextUbicacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Ubicacion"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                    <!-- Campo ID Centro -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewIdCentro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Centro"
+                            android:textColor="@color/black" />
+
+                        <Spinner
+                            android:id="@+id/spinnerCentros"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                    <!-- Campo ID Consulta -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewIdConsulta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Consulta"
+                            android:textColor="@color/black" />
+
+                        <Spinner
+                            android:id="@+id/spinnerConsulta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+                    <!-- Campo ID Servicio -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewIdServicio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Servicio"
+                            android:textColor="@color/black" />
+
+                        <Spinner
+                            android:id="@+id/spinnerServicios"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/border_background"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textViewcodMansis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CodMansis"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/editTextcodMansis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="CodMansis"
+                            android:textColor="@color/black" />
+
+                        <Button
+                            android:id="@+id/btnCodMansis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Acción" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Layout para los botones, anclado a la parte inferior -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Editar ubicación"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorCancel"
+            android:padding="12dp"
+            android:text="Alertar Averia"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
